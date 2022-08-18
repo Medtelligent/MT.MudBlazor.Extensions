@@ -1,0 +1,39 @@
+﻿@namespace MudBlazor
+@inherits MudComponentBase
+
+<div @attributes="UserAttributes" id="@_elementId">
+    @* use @bind-Open="@DrawerOpen" to close on click away *@
+    @if (DisableBackdropClick)
+    {
+        <MudDrawer Open="@DrawerOpen" Anchor="@Anchor" ClipMode="DrawerClipMode.Never" Color="@Color" DisableOverlay="@DisableOverlay" Elevation="@Elevation" Width="@Width" Height="@Height" Variant="DrawerVariant.Temporary">
+            <MudDrawerHeader>
+                <MudText Typo="Typo.h6">@Title</MudText>
+            </MudDrawerHeader>
+            <CascadingValue Value="this" IsFixed="true">
+                @Content
+            </CascadingValue>
+        </MudDrawer>
+    }
+    else
+    {
+        <MudDrawer @bind-Open="@DrawerOpen" Anchor="@Anchor" ClipMode="DrawerClipMode.Never" Color="@Color" DisableOverlay="@DisableOverlay" Elevation="@Elevation" Width="@Width" Height="@Height" Variant="DrawerVariant.Temporary">
+            <MudDrawerHeader>
+                <MudText Typo="Typo.h6">@Title</MudText>
+            </MudDrawerHeader>
+            <CascadingValue Value="this" IsFixed="true">
+                @Content
+            </CascadingValue>
+        </MudDrawer>
+    }
+</div>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        // to make drawer sliding in work
+        await Task.Delay(5);
+
+        DrawerOpen = true;
+    }
+}

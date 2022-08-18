@@ -1,0 +1,10 @@
+﻿@namespace MudBlazor
+
+<CascadingValue Value="this" IsFixed="true">
+    <CascadingValue Value="_globalDrawerOptions">
+        @foreach (var drawerReference in _drawers.Where(x => !x.Result.IsCompleted))
+        {
+            @drawerReference.RenderFragment
+        }
+    </CascadingValue>
+</CascadingValue>
