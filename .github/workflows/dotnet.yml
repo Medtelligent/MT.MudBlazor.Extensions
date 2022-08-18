@@ -24,7 +24,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       working-directory: ./MT.MudBlazor.Extensions/
     - name: Publish
-      uses: brandedoutcast/publish-nuget@v2
+      uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: MT.MudBlazor.Extensions/MT.MudBlazor.Extensions.csproj
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
