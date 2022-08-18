@@ -17,15 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-      working-directory: ./MT.MudBlazor.Extensions/
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-      working-directory: ./MT.MudBlazor.Extensions/
+    - name: Package
+      run: dotnet pack -c Release -o . MT.MudBlazor.Extensions/MT.MudBlazor.Extensions.csproj
     - name: Publish
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: MT.MudBlazor.Extensions/MT.MudBlazor.Extensions.csproj
-        VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate -n 1
