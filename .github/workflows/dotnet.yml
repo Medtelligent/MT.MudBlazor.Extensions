@@ -20,4 +20,4 @@ jobs:
     - name: Package
       run: dotnet pack -c Release -o . MT.MudBlazor.Extensions/MT.MudBlazor.Extensions.csproj
     - name: Publish
-      run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate -n 1
+      run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }} --skip-duplicate -n
