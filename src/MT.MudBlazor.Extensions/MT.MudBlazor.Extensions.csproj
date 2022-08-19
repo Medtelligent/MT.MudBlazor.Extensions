@@ -5,16 +5,16 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Huzaifa Tapal</Authors>
+    <Company>Medtelligent</Company>
     <Description>Extensions to MudBlazor component library</Description>
     <Copyright>Copyright © $(Authors) 2020-$([System.DateTime]::Now.Year)</Copyright>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageProjectUrl>https://github.com/Medtelligent/MT.MudBlazor.Extensions</PackageProjectUrl>
     <PackageLicenseUrl>LICENSE</PackageLicenseUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Medtelligent/MT.MudBlazor.Extensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Blazor, MudBlazor, Material, Material Design, Components, Blazor Components, Blazor Library</PackageTags>
-    <Company>Medtelligent</Company>
   </PropertyGroup>
 
 
@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
-    <PackageReference Include="MudBlazor" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+    <PackageReference Include="MudBlazor" Version="6.0.14" />
   </ItemGroup>
 
   <ItemGroup>
