@@ -1,14 +1,23 @@
 # MT.MudBlazor.Extensions
 Extensions to MudBlazor component library
 
-### Using
+![Nuget](https://img.shields.io/nuget/v/mt.mudblazor.extensions.svg)
 
-Add the nuget Package `MT.MudBlazor.Extensions` to your blazor project.
+## Installing
+
+You can install from Nuget using the following command:
+
+`Install-Package MT.MudBlazor.Extensions`
+
+Or via the Visual Studio package manger.
+
+## Basic Usage
 
 The extensions have been built within the MudBlazor namespace so as long as you're importing that in your `_Imports.razor` file you're good to go.
 
-In your **`_Imports.razor`**
-```csharp
+As per the [MudBlazor Getting Started](https://mudblazor.com/getting-started/installation#manual-install-add-imports) docs, add the following using statement in your `_Imports.razor`
+
+```razor
 @using MudBlazor
 ```
 
@@ -25,7 +34,8 @@ This poses a problem when you want to abstract the content of a drawer for say a
 
 ### Register DrawerService in ServiceProvider
 
-In your **`Program.cs`** or wherever you configure your services
+In your `Program.cs` or wherever you configure your services
+
 ```csharp
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -36,9 +46,10 @@ builder.Services
     .AddMudBlazorDrawerService();
 ```
 
-### Add MudProvider component to layout
+### Add MudDrawerProvider component to layout
 
 In your **`Layout.razor`**
+
 ```html
 <MudLayout>
     <MudDrawerProvider Width="600px" />
@@ -47,14 +58,11 @@ In your **`Layout.razor`**
 
 A subset of original Drawer options can be configured globally as default options for all drawers that are opened with the `IDrawerService`
 
+### Create drawer content component
 
-### Inject IDrawerService in your component
-`@inject IDialogService DialogService`
+Create a component, e.g., `DrawerPane.razor`, that contains content of your drawer pane
 
-### Create component to render as content in drawer
-
-In **`DrawerPane.razor`**
-```csharp
+```razor
 <MudContainer>
     This is some content in the pane.  The message passed here is <strong>@Message</strong>
 </MudContainer>
@@ -87,11 +95,14 @@ In **`DrawerPane.razor`**
 }
 ```
 
-### Show the drawer from a page
+### Trigger the drawer from a page
 
-In your **`DrawerTestPage.razor`**
-```csharp
+In a page, e.g., `DrawerTestPage.razor`, show the drawer with your content by using the `IDrawerService`
+
+```razor
 @page "/DrawerTest"
+
+@inject IDialogService DialogService
 
 <MudPaper Height="1200px">
     <MudStack>
@@ -137,7 +148,9 @@ In your **`DrawerTestPage.razor`**
 
 
 ## Change Log
-- 0.0.1 Initial commit
+- 0.0.1 Pre-release
+- 1.0.0 Initial release
+- 1.0.1 Documentation update
 
 ## Links
 [Github Repository](https://github.com/Medtelligent/MT.MudBlazor.Extensions) |
