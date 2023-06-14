@@ -51,6 +51,8 @@ public partial class MudDrawerInstance : MudComponentBase, IDisposable
 
     private string Height => Options.Height ?? GlobalDrawerOptions.Height;
 
+    private DrawerClipMode ClipMode => Options.ClipMode ?? GlobalDrawerOptions.ClipMode ?? DrawerClipMode.Never;
+
     public void SetOptions(DrawerOptions options)
     {
         Options = options;
