@@ -15,4 +15,6 @@ public class DrawerOptions
     public string Width { get; set; }
 
     public string Height { get; set; }
+
+    public DrawerClipMode? ClipMode { get; set; }
 }

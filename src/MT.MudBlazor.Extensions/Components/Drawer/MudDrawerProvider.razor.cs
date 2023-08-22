@@ -21,8 +21,9 @@ public partial class MudDrawerProvider : IDisposable
 
     [Parameter] [Category(CategoryTypes.Drawer.Appearance)] public string Width { get; set; }
 
-    [Parameter] [Category(CategoryTypes.Drawer.Appearance)] public string Height { get; set; }
-    
+    [Parameter][Category(CategoryTypes.Drawer.Appearance)] public string Height { get; set; }
+    [Parameter][Category(CategoryTypes.Drawer.Appearance)] public DrawerClipMode? ClipMode { get; set; }
+
     private readonly Collection<IDrawerReference> _drawers = new();
     private readonly DrawerOptions _globalDrawerOptions = new();
 
@@ -39,6 +40,7 @@ public partial class MudDrawerProvider : IDisposable
         _globalDrawerOptions.Elevation = Elevation;
         _globalDrawerOptions.Width = Width;
         _globalDrawerOptions.Height = Height;
+        _globalDrawerOptions.ClipMode = ClipMode;
     }
 
     internal void DismissInstance(Guid id, DrawerResult result)

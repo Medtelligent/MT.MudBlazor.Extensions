@@ -5,7 +5,7 @@
     @* use @bind-Open="@DrawerOpen" to close on click away *@
     @if (DisableBackdropClick)
     {
-        <MudDrawer Open="@DrawerOpen" Anchor="@Anchor" ClipMode="DrawerClipMode.Never" Color="@Color" DisableOverlay="@DisableOverlay" Elevation="@Elevation" Width="@Width" Height="@Height" Variant="DrawerVariant.Temporary">
+        <MudDrawer Open="@DrawerOpen" Anchor="@Anchor" ClipMode="@ClipMode" Color="@Color" DisableOverlay="@DisableOverlay" Elevation="@Elevation" Width="@Width" Height="@Height" Variant="DrawerVariant.Temporary">
             <MudDrawerHeader>
                 <MudText Typo="Typo.h6">@Title</MudText>
             </MudDrawerHeader>
@@ -16,7 +16,7 @@
     }
     else
     {
-        <MudDrawer @bind-Open="@DrawerOpen" Anchor="@Anchor" ClipMode="DrawerClipMode.Never" Color="@Color" DisableOverlay="@DisableOverlay" Elevation="@Elevation" Width="@Width" Height="@Height" Variant="DrawerVariant.Temporary">
+        <MudDrawer @bind-Open="@DrawerOpen" Anchor="@Anchor" ClipMode="@ClipMode" Color="@Color" DisableOverlay="@DisableOverlay" Elevation="@Elevation" Width="@Width" Height="@Height" Variant="DrawerVariant.Temporary">
             <MudDrawerHeader>
                 <MudText Typo="Typo.h6">@Title</MudText>
             </MudDrawerHeader>
