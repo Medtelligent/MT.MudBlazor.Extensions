@@ -102,7 +102,7 @@ In a page, e.g., `DrawerTestPage.razor`, show the drawer with your content by us
 ```razor
 @page "/DrawerTest"
 
-@inject IDialogService DialogService
+@inject IDrawerService DrawerService
 
 <MudPaper Height="1200px">
     <MudStack>
@@ -129,7 +129,7 @@ In a page, e.g., `DrawerTestPage.razor`, show the drawer with your content by us
     
     private async Task OpenServiceDrawer()
     {
-        var drawer = DrawerService.Show<DrawerContent>("Test Drawer", new DrawerParameters().Add("Message", "Hello world!"), new DrawerOptions());
+        var drawer = DrawerService.Show<DrawerPane>("Test Drawer", new DrawerParameters().Add("Message", "Hello world!"), new DrawerOptions());
 
         var result = await drawer.Result;
 
@@ -151,6 +151,8 @@ In a page, e.g., `DrawerTestPage.razor`, show the drawer with your content by us
 - 0.0.1 Pre-release
 - 1.0.0 Initial release
 - 1.0.1 Documentation update
+- 1.0.2 Merged pull request from jdevillard to allow configuration of ClipMode original drawer
+- 1.0.3 Documentation update
 
 ## Links
 [Github Repository](https://github.com/Medtelligent/MT.MudBlazor.Extensions) |
